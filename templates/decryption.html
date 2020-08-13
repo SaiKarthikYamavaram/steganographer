@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
+<div class="action decription ">
+	<h1>Decryption</h1>
+	<form action="/upload_decryption" class="form" method="post">
+		<label for="decryption-data">Key</label>
+		<input type="text" name="decryption-data" required id="" />
+
+		<label for="decryption-file">Input File</label>
+		<input
+			type="file"
+			name="decryption-file"
+			accept="image/*"
+			required
+			class="file-input"
+		/>
+		<input class="button dark" type="submit" value="Decrypt" /><br />
+		<span class="inp-req">*Please fillout the above field</span>
+	</form>
+	<script src="{{url_for('static',filename='js/form_validations.js')}}"></script>
+</div>
+{% endblock %}

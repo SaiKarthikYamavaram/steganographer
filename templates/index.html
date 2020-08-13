@@ -1,0 +1,31 @@
+{% extends 'base.html' %}{% block title %}Intro{% endblock %} {% block head %}
+{% endblock %} {% block body %}
+<div class="decription">
+	<div class="intro-content">
+		<div>
+			<div class="best-way">
+				A Best way to Secure Your Data
+			</div>
+			<span class="three-step">
+				Using 3 Step Encryption
+			</span>
+
+			<div class="getting-started">
+				<a class="button" href="/">Get Started</a>
+			</div>
+		</div>
+	</div>
+	<img
+		src="../static/css/download.png"
+		alt="securing data image"
+		class="secure-img"
+	/>
+</div>
+<div class="action">
+	<h1>Choose Your Action</h1>
+	<div class="content">
+		<a href="/encryption" class="dark"> Encryption</a>
+		<a href="/decryption" class="dark">Decryption </a>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %} Encryption {% endblock %} {% block
+body %}
+<div class="decription">
+	<h1>Encryption</h1>
+	<form action="/upload_encryption" method="post">
+		<label for="encryption-data">Key</label>
+		<input
+			type="text"
+			name="encryption-data"
+			required
+			id="encryption-data"
+		/><br />
+		<input type="text" name="encryption-key" required id="encryption-key" />
+
+		<input class="button dark" type="submit" value="Encrypt" /><br />
+		<span class="inp-req">*Please fillout the above field</span>
+	</form>
+	<script src="{{url_for('static',filename='js/form_validations.js')}}"></script>
+</div>
+{% endblock %}

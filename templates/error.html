@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block title %} Error {% endblock %} {% block body
+%}
+<div class="fullScreen">
+	<img
+		src="{{ url_for('static' ,filename='css/error.svg') }}"
+		alt="error image"
+		class="errimg"
+		srcset=""
+	/>
+	
+</div>
+
+{% endblock %}
