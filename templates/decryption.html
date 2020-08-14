@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
 <div class="action decription ">
 	<h1>Decryption</h1>
-	<form action="/upload_decryption" class="form" method="post">
+	<form action="/upload_decryption" class="form" method="post" enctype="multipart/form-data">
 		<label for="decryption-data">Key</label>
 		<input type="text" name="decryption-data" required id="" />
 
@@ -9,7 +9,7 @@
 		<input
 			type="file"
 			name="decryption-file"
-			accept="image/*"
+			accept="image/png"
 			required
 			class="file-input"
 		/>

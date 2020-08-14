@@ -1,8 +1,11 @@
 from flask import Flask, render_template, url_for, request
+from flask import *
+import os
+
 from cryptography.fernet import Fernet
-
-
-app = Flask(__name__)
+import helper
+from helper.steganography import *
+app = Flask(__name__, instance_path='D:\\mini-project\\flask\\upload\\')
 
 
 def TxtDecrypt(data, key):
@@ -17,9 +20,13 @@ def TxtEncrypt(data, key):
     data_encoded = data.encode()  # Converting message string to utf-8 format
     fObject = Fernet(key)  # a Fernet object
     data1 = fObject.encrypt(data_encoded)
-    # data1 = TxtDecrypt(data1, key)
+    data1 = TxtDecrypt(data1, key)
     return data1
 
+@app.route('/get-img')
+def get_image():
+    photo = "upload\download.png"
+    return send_file(photo,mimetype="image/png")
 
 @app.route('/')
 def index():
@@ -42,7 +49,9 @@ def on_upload():
         file = open('key.key', 'rb')  # Open the file as wb to read bytes
         key = file.read()  # The key will be type bytes
         file.close()
-        return TxtEncrypt(request.form['encryption-data'], key)
+        decrypted_text = TxtEncrypt(request.form['encryption-data'], key)
+        hide_data_to_image(str.encode(decrypted_text))
+        return decrypted_text
 
     else:
         return render_template('error.html')
@@ -54,7 +63,10 @@ def on_upload_decryption():
         file = open('key.key', 'rb')  # Open the file as wb to read bytes
         key = file.read()  # The key will be type bytes
         file.close()
-        return TxtDecrypt(request.form['decryption-data'], key)
+        f = request.files["decryption-file"]
+        # f.save(os.path.join(app.instance_path, f.filename))
+        decrypted_text = TxtDecrypt(request.form['decryption-data'], key)
+        return decrypted_text
 
     else:
         return render_template('error.html')
