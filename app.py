@@ -31,12 +31,6 @@ def TxtEncrypt(data, key):
     return data1
 
 
-@app.route('/get-img')
-def get_image():
-    photo = "upload\download.png"
-    return send_file(photo, mimetype="image/png")
-
-
 @app.route('/')
 def index():
     return render_template('index.html')

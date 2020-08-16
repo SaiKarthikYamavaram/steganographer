@@ -237,17 +237,23 @@ label {
 	/* clip : rect() */
 	/* height: max-content; */
 	/* scale: 0.4; */
-	margin: 0 auto 0 auto;
-	/* object-fit: contain; */
+	/* margin: 0 auto 0 auto; */
+	object-fit: contain;
 	animation: op 1s forwards 0s ease-out;
 	/* width: 60vw; */
 	height: 800px;
 }
+.flow + h1 {
+	font-size: 100px;
+}
 .how-it-works {
 	display: flex;
 	width: 100%;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	animation: op 1.2s forwards 0s ease;
 }
 .secondary {
 	opacity: 0.8;
@@ -271,4 +277,8 @@ label {
 }
 .err {
 	color: red;
+}
+.largest-font {
+	font-size: 100px;
+	font-weight: bolder;
 }
