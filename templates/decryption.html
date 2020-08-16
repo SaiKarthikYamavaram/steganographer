@@ -1,10 +1,11 @@
 {% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
-<div class="action decription ">
+<div class="action full decription">
 	<h1>Decryption</h1>
-	<form action="/upload_decryption" class="form" method="post" enctype="multipart/form-data">
-		<label for="decryption-data">Key</label>
-		<input type="text" name="decryption-data" required id="" />
+	<h3 class="err">{{Error}}</h3>
 
+	<form action="/upload_decryption" method="post" enctype="multipart/form-data">
+		<!-- <label for="decryption-data">Key</label> -->
+		<!-- <input type="text" name="decryption-data" required id="" /> -->
 		<label for="decryption-file">Input File</label>
 		<input
 			type="file"
@@ -12,7 +13,12 @@
 			accept="image/png"
 			required
 			class="file-input"
+			onchange="document.getElementById('blah').src =
+		window.URL.createObjectURL(this.files[0]) "
 		/>
+		<!-- <div id="blah"></div> -->
+		<img id="blah" alt="your image" width="500" height="500" />
+		<br />
 		<input class="button dark" type="submit" value="Decrypt" /><br />
 		<span class="inp-req">*Please fillout the above field</span>
 	</form>

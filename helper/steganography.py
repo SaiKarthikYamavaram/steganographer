@@ -27,8 +27,8 @@ def hide_data_to_image(data_to_hide):
             The path to the modified image file with the hidden data
 
     """
-    input_file_path = "D:\\mini-project\\flask\\steganographer\\static\\images\\encrypt\\download.png"
-    output_file_path = "D:\\mini-project\\flask\\steganographer\\encrypted_output\\" + \
+    input_file_path = ".\\static\\images\\encrypt\\download.png"
+    output_file_path = ".\\encrypted_output\\" + \
         "_with_hidden_file" + "." + input_file_path.split(".")[-1]
     image = Image.open(input_file_path).convert('RGB')
     pixels = image.load()
@@ -106,8 +106,6 @@ def extract_message_from_image(input_file_path):
 
     image = Image.open(input_file_path).convert('RGB')
     pixels = image.load()
-
-    # List where we will store the extracted bits
     data_stack = list()
     end_of_msg = False
 
@@ -131,8 +129,9 @@ def extract_message_from_image(input_file_path):
 
     if not end_of_msg:
         # That means we didn't encountered any '\0' character
-        print("WARNING : Incomplete Hidden Message")
-        print("WARNING : Image may be corrupted or no Message was hidden in this Image")
+        # print("WARNING : Incomplete Hidden Message")
+        # print("WARNING : Image may be corrupted or no Message was hidden in this Image")
+        return False
 
     data = bytes()
 
