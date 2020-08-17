@@ -1,7 +1,5 @@
 from PIL import Image
-import filecmp
-from getopt import getopt
-from sys import argv
+
 
 
 def __change_last_2_bits__(image_pixel_values, data_bits):
@@ -9,31 +7,12 @@ def __change_last_2_bits__(image_pixel_values, data_bits):
 
 
 def hide_data_to_image(data_to_hide):
-    """
-    This function hides the data_to_hide inside the image located at input_file_path,
-    and saves this modified image to output_file_path.
-
-    DOESN'T WORK WITH JPEG IMAGES, PNG ARE FULLY SUPPORTED
-
-    ## In future, it will also support Encryption of the data_to_hide by default
-
-    Parameters
-        ----------
-        input_file_path : str
-            The path to the image file in which data is to be hidden
-        data_to_hide : bytes
-            The data to be hidden in input image file
-        output_file_path : str
-            The path to the modified image file with the hidden data
-
-    """
     input_file_path = ".\\static\\images\\encrypt\\download.png"
     output_file_path = ".\\encrypted_output\\" + \
         "_with_hidden_file" + "." + input_file_path.split(".")[-1]
     image = Image.open(input_file_path).convert('RGB')
     pixels = image.load()
 
-    # End data_to_hide with 4 '\0' characters
     data_to_hide += b"\0\0\0\0"
 
     print(f"* INFO : Size of data to be hidden : {len(data_to_hide)} bytes")
