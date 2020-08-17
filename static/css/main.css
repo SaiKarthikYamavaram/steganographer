@@ -282,3 +282,8 @@ label {
 	font-size: 80px;
 	font-weight: bolder;
 }
+.row-flex{
+	display: flex;
+	justify-content: space-around;
+	align-items:center ;
+}

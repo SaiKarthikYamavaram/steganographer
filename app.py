@@ -28,7 +28,7 @@ def TxtEncrypt(data, key):
     data_encoded = data.encode()
     fObject = Fernet(key)  # a Fernet object
     data1 = fObject.encrypt(data_encoded)
-    print(data,data1)
+    print(data, data1)
     return data1
 
 

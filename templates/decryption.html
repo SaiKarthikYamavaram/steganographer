@@ -3,24 +3,29 @@
 	<h1>Decryption</h1>
 	<h3 class="err">{{Error}}</h3>
 
-	<form action="/upload_decryption" method="post" enctype="multipart/form-data">
+	<form action="/upload_decryption" class="row-flex" method="post" enctype="multipart/form-data">
 		<!-- <label for="decryption-data">Key</label> -->
 		<!-- <input type="text" name="decryption-data" required id="" /> -->
-		<label for="decryption-file">Input File</label>
-		<input
-			type="file"
-			name="decryption-file"
-			accept="image/png"
-			required
-			class="file-input"
-			onchange="document.getElementById('blah').src =
+		<div>
+			<label for="decryption-file">Input File</label>
+			<input
+				type="file"
+				name="decryption-file"
+				accept="image/png"
+				required
+				class="file-input"
+				onchange="document.getElementById('blah').src =
 		window.URL.createObjectURL(this.files[0]) "
-		/>
-		<!-- <div id="blah"></div> -->
-		<img id="blah" alt="your image" width="500" height="500" />
-		<br />
-		<input class="button dark" type="submit" value="Decrypt" /><br />
-		<span class="inp-req">*Please fillout the above field</span>
+			/>
+			<!-- <div id="blah"></div> -->
+			<br />
+			<input class="button dark" type="submit" value="Decrypt" /><br />
+			<span class="inp-req">*Please fillout the above field</span>
+		</div>
+		<div>
+			<h2>Your Input Preview</h2>
+			<img id="blah" style="border:none"  width="400" height="400" />
+		</div>
 	</form>
 	<script src="{{url_for('static',filename='js/form_validations.js')}}"></script>
 </div>
