@@ -1,5 +1,16 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 html {
+	width: 100vw;
 	scroll-behavior: smooth;
+}
+
+img {
+	width: 60% !important;
+	height: auto;
 }
 
 body {
@@ -12,6 +23,7 @@ body {
 .nav-bar {
 	box-sizing: inherit;
 	display: inline-flex;
+	flex-wrap: wrap;
 	width: 100%;
 	background-color: #232323;
 	justify-content: space-around;
@@ -32,6 +44,7 @@ a:hover {
 	z-index: 50;
 	top: 0em;
 	color: azure;
+	width: 100vw;
 }
 .nav-bar a:visited {
 	color: azure;
@@ -39,10 +52,15 @@ a:hover {
 .logo a {
 	font-size: 1.5em;
 	font-family: Agustina Regular;
+	flex: 1;
+
 }
 .logo {
-	flex: 8;
-	font-size: 1.5em;
+	flex: 10;
+	font-size: 1.25rem;
+}
+.logo :hover {
+	transform: scale(5);
 }
 .about {
 	flex: 1;
@@ -56,22 +74,14 @@ a:hover {
 }
 
 .secure-img {
-	width: auto;
+	width: 30%;
 	height: auto;
 	object-fit: contain;
 	flex: 1;
 }
 
-.decription {
-	background: #30336b;
-	display: flex;
-	align-self: flex-end;
-	height: 400px;
-	width: 100%;
-	padding-left: 40px;
-	color: white;
-}
 .intro-content {
+	display: flex;
 	flex: 4;
 	color: white;
 	font-size: 18px;
@@ -106,7 +116,8 @@ a:hover {
 	box-sizing: border-box;
 }
 .button:hover {
-	opacity: 0.8;
+	/* opacity: 0.8; */
+	transform: scale(1.02);
 	cursor: pointer;
 }
 .dark {
@@ -142,14 +153,14 @@ a:hover {
 		transform: translateX(0%) skewX(15deg);
 	}
 	100% {
-		transform: translateX(-80%) skewX(0);
+		transform: translateX(-100%) skewX(0);
 	}
 }
 
-.secure-img {
+ .secure-img {
 	position: relative;
 	right: -40%;
-	animation: newAnimation 2s forwards 0.5s ease-out;
+	animation: newAnimation 2s forwards 0s ease-out;
 }
 
 .variable-content {
@@ -241,7 +252,7 @@ label {
 	object-fit: contain;
 	animation: op 1s forwards 0s ease-out;
 	/* width: 60vw; */
-	height: 800px;
+	/* height: 800px; */
 }
 .flow + h1 {
 	font-size: 100px;
@@ -252,7 +263,7 @@ label {
 	flex-direction: row;
 	align-items: center;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-around;
 	animation: op 1.2s forwards 0s ease;
 }
 .secondary {
@@ -282,8 +293,29 @@ label {
 	font-size: 80px;
 	font-weight: bolder;
 }
-.row-flex{
+.row-flex {
 	display: flex;
 	justify-content: space-around;
-	align-items:center ;
+	align-items: center;
+}
+.decription {
+	background: #30336b;
+	display: flex;
+	flex-wrap: wrap;
+	align-self: flex-end;
+	width: 100%;
+	padding-left: 40px;
+	color: white;
+	overflow: hidden;
+}
+
+.dec_container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+#blah {
+	position: absolute;
+	object-fit: contain;
 }

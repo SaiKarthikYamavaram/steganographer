@@ -23,7 +23,7 @@
 			type="image/png"
 		/>
 
-		<!-- <link rel="stylesheet" href="../static/css/main.css" /> -->
+		<link rel="stylesheet" href="../static/css/typewriter.css" />
 		<style>
 			* {
 				box-sizing: border-box;
@@ -33,15 +33,27 @@
 	</head>
 	<body>
 		<nav class="nav-bar">
-			<span class="logo">
-				<a href="/"> < Stenographer /></a>
+			<span>
+				<div class="logo">
+					<a href="/"> < Stenographer /></a>
+				</div>
 			</span>
-			<a href="/about" class="about">About us </a>
+			<span>
+				<div class="logo">
+					<!-- <a href="/"> < Stenographer /></a> -->
+				</div>
+			</span>
+
+			<span>
+				<a href="/about" class="about">About us </a>
+			</span>
 		</nav>
 		<div class="variable-content"> {% block body %} {% endblock %} </div>
 		<footer>
 			<nav class="nav-bar center">
 				<!-- <span class="logo"> </span> -->
+				<div class="copyright">Built with ❤ in flask </div>
+
 				<span class="copyright">&copy; SaiYamavaram, 2020 </span>
 			</nav>
 		</footer>

@@ -1,32 +1,43 @@
 {% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
-<div class="action full decription">
+<div class=" full decription">
 	<h1>Decryption</h1>
 	<h3 class="err">{{Error}}</h3>
 
-	<form action="/upload_decryption" class="row-flex" method="post" enctype="multipart/form-data">
+	<form
+		action="/upload_decryption"
+		class="row-flex"
+		method="post"
+		enctype="multipart/form-data"
+	>
 		<!-- <label for="decryption-data">Key</label> -->
 		<!-- <input type="text" name="decryption-data" required id="" /> -->
-		<div>
-			<label for="decryption-file">Input File</label>
-			<input
-				type="file"
-				name="decryption-file"
-				accept="image/png"
-				required
-				class="file-input"
-				onchange="document.getElementById('blah').src =
-		window.URL.createObjectURL(this.files[0]) "
-			/>
-			<!-- <div id="blah"></div> -->
-			<br />
-			<input class="button dark" type="submit" value="Decrypt" /><br />
-			<span class="inp-req">*Please fillout the above field</span>
-		</div>
-		<div>
-			<h2>Your Input Preview</h2>
-			<img id="blah" style="border:none"  width="400" height="400" />
+		<div class="dec_container">
+			<div>
+				<label for="decryption-file">Input File</label>
+				<input
+					type="file"
+					name="decryption-file"
+					accept="image/png"
+					required
+					class="file-input"
+					onchange="const result =document.getElementById('blah');
+					result.src =
+				window.URL.createObjectURL(this.files[0]);
+				// result.width = '20%' "
+				/>
+				<!-- <div id="blah"></div> -->
+				<br />
+				<input class="button dark" type="submit" value="Decrypt" /><br />
+				<span class="inp-req">*Please fillout the above field</span>
+			</div>
+
+			<div>
+				<h2>Your Input Preview</h2>
+
+				<img id="blah" width="10vw" height="10vh" />
+			</div>
 		</div>
 	</form>
-	<script src="{{url_for('static',filename='js/form_validations.js')}}"></script>
+	<!-- <script src="{{url_for('static',filename='js/form_validations.js')}}"></script> -->
 </div>
 {% endblock %}

@@ -8,8 +8,8 @@ from helper.steganography import *
 
 
 app = Flask(
-    __name__, instance_path='C:\\Users\\ysaik\\Desktop\\New folder (3)\\steganographer\\decryption_input')
-app.config['CLIENT_IMG'] = "C:\\Users\\ysaik\\Desktop\\New folder (3)\\steganographer\\encrypted_output"
+    __name__, instance_path='C:\\Users\\ysaik\\Desktop\\Steganographer\\steganographer\\decryption_input')
+app.config['CLIENT_IMG'] = "C:\\Users\\ysaik\\Desktop\\Steganographer\\steganographer\\encrypted_output"
 
 
 def TxtDecrypt(data, key):
@@ -47,7 +47,7 @@ def decryption():
     return render_template('decryption.html')
 
 
-@app.route('/upload_encryption', methods=["GET", "POST"])
+@app.route('/upload_encryption', methods=["GET", "POST"])   
 def on_upload():
     if(request.method == "POST"):
         file = open('key.key', 'rb')  # Open the file as wb to read bytes
