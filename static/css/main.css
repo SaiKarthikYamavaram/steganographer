@@ -19,6 +19,7 @@ body {
 	font-family: sans-serif !important ;
 	overflow-x: hidden;
 	min-height: 100vh;
+	background-color: #30336b  !important;
 }
 .nav-bar {
 	box-sizing: inherit;
@@ -259,6 +260,7 @@ label {
 }
 .how-it-works {
 	display: flex;
+	background:white;
 	width: 100%;
 	flex-direction: row;
 	align-items: center;

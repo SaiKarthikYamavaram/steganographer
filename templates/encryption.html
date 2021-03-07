@@ -1,27 +1,28 @@
 {% extends 'base.html' %} {% block title %} Encryption {% endblock %} {% block
-	body %}
-	<div class="decription full">
-		<h1>Encryption</h1>
-		<form action="/upload_encryption" method="post">
-			<div>
-				<label for="encryption-data inp-label"
-					>Enter Message you wnat to encrypt
-				</label>
-				<textarea
-					name="encryption-data"
-					required
-					id="encryption-data"
-					placeholder="Example Message"
-					rows="10"
-				></textarea
-				><br />
-				<!-- <input type="text" name="encryption-key" required id="encryption-key" /> -->
-	
-				<span class="inp-req">*Please fillout the above field</span>
-			</div>
-			<input class="button dark" type="submit" value="Encrypt" /><br />
-		</form>
-		<script src="{{url_for('static',filename='js/form_validations.js')}}"></script>
-	</div>
-	{% endblock %}
-	
+body %}
+<div class="decription full">
+	<h1>Encryption</h1>
+	<form action="/upload_encryption" method="post">
+		<div>
+			<label for="encryption-data inp-label"
+				>Enter Message you wnat to encrypt
+			</label>
+			<textarea
+				name="encryption-data"
+				required
+				id="encryption-data"
+				placeholder="Example Message"
+				rows="10"
+			></textarea
+			><br />
+			<!-- <input type="text" name="encryption-key" required id="encryption-key" /> -->
+
+			<span class="inp-req">*Please fillout the above field</span>
+		</div>
+		<input class="button dark" type="submit" value="Encrypt" />
+		<a class="button " href="/decryption" >Decrypt</a><br />
+
+	</form>
+	<script src="{{url_for('static',filename='js/form_validations.js')}}"></script>
+</div>
+{% endblock %}
