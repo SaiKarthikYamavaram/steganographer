@@ -3,13 +3,17 @@
 	padding: 0;
 }
 
+a {
+	display: inline-block;
+}
+
 html {
 	width: 100vw;
 	scroll-behavior: smooth;
 }
 
 img {
-	width: 60% !important;
+	width: 60% ;
 	height: auto;
 }
 
@@ -19,7 +23,7 @@ body {
 	font-family: sans-serif !important ;
 	overflow-x: hidden;
 	min-height: 100vh;
-	background-color: #30336b  !important;
+	background-color: #30336b !important;
 }
 .nav-bar {
 	box-sizing: inherit;
@@ -38,6 +42,7 @@ a {
 }
 a:hover {
 	opacity: 0.7;
+	transform: scale(1.15);
 	/* filter: brightness(50%); */
 }
 .nav-bar {
@@ -54,14 +59,13 @@ a:hover {
 	font-size: 1.5em;
 	font-family: Agustina Regular;
 	flex: 1;
-
 }
 .logo {
 	flex: 10;
 	font-size: 1.25rem;
 }
-.logo :hover {
-	transform: scale(5);
+a :hover {
+	transform: scale(1.25);
 }
 .about {
 	flex: 1;
@@ -158,7 +162,7 @@ a:hover {
 	}
 }
 
- .secure-img {
+.secure-img {
 	position: relative;
 	right: -40%;
 	animation: newAnimation 2s forwards 0s ease-out;
@@ -259,8 +263,10 @@ label {
 	font-size: 100px;
 }
 .how-it-works {
+	font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+	font-style: italic;
 	display: flex;
-	background:white;
+	background: white;
 	width: 100%;
 	flex-direction: row;
 	align-items: center;
@@ -279,7 +285,8 @@ label {
 	justify-content: space-around;
 }
 .full {
-	height: 100vh;
+	min-height: 100vh;
+	padding: 0.25rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -315,6 +322,7 @@ label {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
+	position: relative;
 }
 
 #blah {
@@ -323,5 +331,39 @@ label {
 }
 
 .grey {
-	color:rgb(184, 196, 206);
+	color: rgb(184, 196, 206);
+}
+
+.best-way {
+	/* font-family: serif; */
+	/* font-size: 1.25rem; */
+	/* font-style:italic; */
+	/* font-weight: 300; */
+}
+/* .logo:hover{
+	transform:scale(1.25);
+} */
+/* .flex1{
+	flex: 2;
+	justify-content: center;
+	align-items: center;
+} */
+
+.noalignvertical {
+	justify-content: flex-start;
+}
+
+#blah {
+
+	/* background-position: contain; */
+	background-size: contain;
+    background-repeat: no-repeat;
+    width: 35vw	;
+	height: auto;
+	/* height: 100rem; */
+    /* height: 400px; */
+	object-fit: scale-down;
+	
+    /* padding-top: 66.64%; (img-height / img-width * container-width) */
+                /* (853 / 1280 * 100) */
 }

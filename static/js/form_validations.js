@@ -12,8 +12,8 @@ inp.addEventListener("input", function (event) {
 	}
 });
 
-key.addEventListener("input", () => {
-	if (key.value.length < 24) {
-		console.log("less");
-	}
-});
+// key.addEventListener("input", () => {
+// 	if (key.value.length < 24) {
+// 		console.log("less");
+// 	}
+// });
