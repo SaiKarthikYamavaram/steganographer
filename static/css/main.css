@@ -321,3 +321,7 @@ label {
 	position: absolute;
 	object-fit: contain;
 }
+
+.grey {
+	color:rgb(184, 196, 206);
+}
