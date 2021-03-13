@@ -75,11 +75,12 @@ def extract_message_from_image(input_file_path):
                 break
 
         if end_of_msg:
+            # print(data_stack)
             break
 
     if not end_of_msg:
         return False
-
+    # print("data stack",data_stack)
     data = bytes()
 
     for i in range(0, len(data_stack) - 4, 4):
@@ -98,5 +99,5 @@ def extract_message_from_image(input_file_path):
 
     if end_of_msg:
         data = data[:-4]
-
+    print(data)
     return data

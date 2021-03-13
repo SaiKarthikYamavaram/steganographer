@@ -16,6 +16,9 @@ img {
 	width: 60%;
 	height: auto;
 }
+.fullScreen {
+	background: #fff !important;
+}
 
 body {
 	margin: 0;
@@ -228,7 +231,7 @@ label {
 	padding: 20px 0px 0px 20px;
 	width: 100%;
 	height: auto;
-	object-fit: contain;
+	object-fit: cover;
 }
 .inp-req {
 	color: red;
